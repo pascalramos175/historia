@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil: redemocratização (1985–1989)</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #111d31;
+      --panel2: #172740;
+      --text: #f4f7fb;
+      --muted: #b8c5d8;
+      --accent: #65d6b0;
+      --accent2: #f4c66a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--text);
+      background: radial-gradient(circle at 15% 10%, #203958 0, transparent 35%),
+                  linear-gradient(135deg, #09111f, #101d31 60%, #0b1220);
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex; flex-direction: column;
+    }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 5vw; color: var(--muted); font-size: 14px;
+      border-bottom: 1px solid #ffffff18;
+    }
+    .brand { color: var(--text); font-weight: 700; letter-spacing: .4px; }
+    .progress-wrap { height: 4px; background: #ffffff18; }
+    #progress { height: 100%; width: 10%; background: var(--accent); transition: width .25s; }
+    main { width: min(1100px, 90vw); margin: auto; padding: 35px 0; flex: 1; display: grid; place-items: center; }
+    .slide {
+      display: none; width: 100%; min-height: 480px; padding: clamp(26px, 5vw, 58px);
+      background: linear-gradient(145deg, #14243b, #101b2d);
+      border: 1px solid #ffffff20; border-radius: 24px;
+      box-shadow: 0 24px 70px #0006; animation: appear .3s ease;
+    }
+    .slide.active { display: block; }
+    @keyframes appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: bold; }
+    h1 { font-size: clamp(38px, 6vw, 68px); line-height: 1.04; margin: 20px 0; }
+    h2 { font-size: clamp(30px, 4vw, 46px); margin: 12px 0 24px; }
+    h3 { color: var(--accent2); margin: 0 0 10px; font-size: 20px; }
+    p, li { color: var(--muted); font-size: clamp(17px, 2vw, 20px); line-height: 1.55; }
+    ul { padding-left: 24px; }
+    li { margin: 10px 0; }
+    .lead { max-width: 760px; font-size: clamp(19px, 2.3vw, 24px); }
+    .tag { display: inline-block; padding: 8px 13px; margin-top: 16px; border-radius: 30px; color: #092018; background: var(--accent); font-weight: bold; font-size: 13px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 22px; }
+    .card { background: var(--panel2); border: 1px solid #ffffff12; padding: 20px; border-radius: 16px; }
+    .card p { font-size: 16px; margin: 0; }
+    .year { color: var(--accent2); font-size: 14px; font-weight: bold; letter-spacing: 1px; }
+    .quote { border-left: 4px solid var(--accent); padding: 12px 0 12px 20px; margin-top: 24px; color: var(--text); font-size: 22px; line-height: 1.45; }
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 30px; }
+    .timeline .card { padding: 16px; }
+    .timeline strong { color: var(--accent); display: block; font-size: 22px; margin-bottom: 8px; }
+    .timeline p { font-size: 14px; margin: 0; }
+    footer {
+      width: min(1100px, 90vw); margin: 0 auto; padding: 0 0 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 15px;
+    }
+    .controls { display: flex; gap: 10px; }
+    button {
+      border: 1px solid #ffffff30; background: #172740; color: var(--text);
+      border-radius: 12px; padding: 12px 18px; cursor: pointer; font-size: 15px;
+    }
+    button:hover { background: #233a59; }
+    button:disabled { opacity: .35; cursor: not-allowed; }
+    #counter { color: var(--muted); font-size: 14px; }
+    .hint { color: #8fa2bc; font-size: 13px; }
+    @media (max-width: 650px) {
+      .slide { min-height: auto; }
+      .grid { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: repeat(2, 1fr); }
+      header { padding: 14px 5vw; }
+      footer { flex-wrap: wrap; }
+    }
+    @media print {
+      body { display: block; background: white; color: black; }
+      header, footer, .progress-wrap { display: none; }
+      main { display: block; width: 100%; padding: 0; }
+      .slide, .slide.active {
+        display: block !important; min-height: 100vh; border: 0; border-radius: 0;
+        box-shadow: none; background: white; color: black; page-break-after: always;
+      }
+      p, li { color: #333; }
+      .card { background: #f1f4f7; }
+      .eyebrow, h3, .year, .timeline strong { color: #176b55; }
+      h1, h2 { color: #14243b; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">HISTÓRIA DO BRASIL</div>
+    <div>Redemocratização · 1985–1989</div>
+  </header>
+  <div class="progress-wrap"><div id="progress"></div></div>
+
+  <main>
+    <section class="slide active">
+      <div class="eyebrow">Apresentação de história</div>
+      <h1>O Brasil após o fim da Ditadura Militar</h1>
+      <p class="lead">As mudanças políticas, os direitos conquistados e os problemas econômicos e sociais durante a redemocratização, entre 1985 e 1989.</p>
+      <span class="tag">1985 — 1989</span>
+      <div class="quote">O país recuperou a democracia, mas ainda precisava enfrentar dificuldades acumuladas ao longo de muitos anos.</div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Contexto histórico</div>
+      <h2>O que aconteceu em 1985?</h2>
+      <p>Em 1985, terminou o regime militar que governava o Brasil desde 1964. Começou então o processo de redemocratização, ou seja, a reconstrução de um sistema político com maior participação popular e respeito às liberdades democráticas.</p>
+      <div class="grid">
+        <div class="card"><h3>Fim do regime militar</h3><p>O país voltou a ser governado por um presidente civil, depois de 21 anos de governos militares.</p></div>
+        <div class="card"><h3>Tancredo e Sarney</h3><p>Tancredo Neves foi eleito indiretamente, mas adoeceu e morreu antes da posse. José Sarney assumiu a Presidência.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Mudanças políticas</div>
+      <h2>O retorno da democracia</h2>
+      <div class="grid">
+        <div class="card"><h3>Liberdade de expressão</h3><p>A censura oficial da ditadura foi encerrada. A imprensa, artistas e cidadãos passaram a ter mais liberdade para expressar opiniões.</p></div>
+        <div class="card"><h3>Participação política</h3><p>Partidos, sindicatos e movimentos sociais ganharam espaço para se organizar e participar da vida pública.</p></div>
+        <div class="card"><h3>Eleições diretas</h3><p>Em 1989, os brasileiros voltaram a escolher diretamente o presidente da República, algo que não acontecia desde 1960.</p></div>
+        <div class="card"><h3>Instituições democráticas</h3><p>O país começou a reconstruir suas instituições e ampliar os mecanismos de participação política.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Um marco histórico</div>
+      <h2>A Constituição de 1988</h2>
+      <p>Conhecida como <strong>Constituição Cidadã</strong>, ela estabeleceu novas garantias e fortaleceu os direitos da população.</p>
+      <div class="grid">
+        <div class="card"><h3>Direitos individuais</h3><p>Proteção das liberdades, da igualdade perante a lei e da participação política.</p></div>
+        <div class="card"><h3>Direitos trabalhistas</h3><p>Ampliação e consolidação de garantias relacionadas ao trabalho.</p></div>
+        <div class="card"><h3>Saúde como direito</h3><p>A saúde foi reconhecida como direito de todos e dever do Estado, criando as bases para o SUS.</p></div>
+        <div class="card"><h3>Direitos sociais</h3><p>Educação, assistência social e outros direitos receberam proteção constitucional.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Desafios econômicos</div>
+      <h2>A hiperinflação</h2>
+      <p>Um dos maiores problemas do período foi a inflação muito elevada. Os preços aumentavam rapidamente e o dinheiro perdia poder de compra.</p>
+      <ul>
+        <li>Alimentos e produtos básicos ficavam mais caros em pouco tempo.</li>
+        <li>Famílias tinham dificuldade para organizar o orçamento.</li>
+        <li>Quem recebia salário fixo era especialmente prejudicado.</li>
+        <li>O governo lançou planos econômicos, como o Plano Cruzado, o Plano Bresser e o Plano Verão, mas não conseguiu controlar a inflação de forma duradoura.</li>
+      </ul>
+      <div class="quote">A redemocratização trouxe novas liberdades, mas a crise econômica continuou afetando o cotidiano da população.</div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Desafios sociais</div>
+      <h2>Desigualdade e pobreza</h2>
+      <div class="grid">
+        <div class="card"><h3>Desigualdade social</h3><p>A renda e as oportunidades continuavam distribuídas de forma desigual entre a população.</p></div>
+        <div class="card"><h3>Pobreza</h3><p>Muitas famílias ainda enfrentavam dificuldades para ter moradia adequada, alimentação e acesso a serviços básicos.</p></div>
+        <div class="card"><h3>Desemprego</h3><p>A economia instável e o baixo crescimento dificultavam a criação de empregos.</p></div>
+        <div class="card"><h3>Acesso a serviços</h3><p>O acesso à educação e à saúde permanecia desigual, apesar dos direitos reconhecidos na Constituição.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Desafios políticos e econômicos</div>
+      <h2>Um país em reconstrução</h2>
+      <ul>
+        <li>As instituições democráticas precisavam ser fortalecidas depois de anos de autoritarismo.</li>
+        <li>O governo enfrentava dificuldades para controlar a inflação e organizar as contas públicas.</li>
+        <li>A dívida externa limitava as possibilidades econômicas do país.</li>
+        <li>Parte das estruturas e normas herdadas do período militar ainda precisava ser revista.</li>
+      </ul>
+      <p>Esses desafios mostram que a mudança de regime político não significou uma solução imediata para todos os problemas brasileiros.</p>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Linha do tempo</div>
+      <h2>1985 a 1989: principais acontecimentos</h2>
+      <div class="timeline">
+        <div class="card"><strong>1985</strong><p>Fim do regime militar e início do governo civil de José Sarney.</p></div>
+        <div class="card"><strong>1986</strong><p>Plano Cruzado tenta controlar a inflação.</p></div>
+        <div class="card"><strong>1988</strong><p>Promulgação da Constituição Federal.</p></div>
+        <div class="card"><strong>1989</strong><p>Primeira eleição direta para presidente desde 1960.</p></div>
+      </div>
+      <div class="quote">O período marcou a passagem de um regime autoritário para uma democracia constitucional.</div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Comparação</div>
+      <h2>Avanços e problemas</h2>
+      <div class="grid">
+        <div class="card"><h3>Avanços</h3><ul><li>Retorno da democracia</li><li>Liberdade de expressão</li><li>Constituição de 1988</li><li>Ampliação dos direitos sociais</li><li>Eleições diretas em 1989</li></ul></div>
+        <div class="card"><h3>Problemas</h3><ul><li>Hiperinflação</li><li>Pobreza e desigualdade</li><li>Desemprego</li><li>Dívida externa</li><li>Instabilidade econômica</li></ul></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Conclusão</div>
+      <h2>O que ficou desse período?</h2>
+      <p>A partir de 1985, o Brasil recuperou a democracia e ampliou os direitos dos cidadãos. A Constituição de 1988 consolidou importantes garantias políticas e sociais.</p>
+      <p>Mesmo assim, o país continuou enfrentando problemas como inflação, pobreza, desemprego e desigualdade. Muitos desses desafios já existiam durante a ditadura e permaneceram na transição democrática.</p>
+      <div class="quote">A democracia foi reconstruída, mas a construção de uma sociedade mais justa continuou sendo um desafio.</div>
+      <span class="tag">Fim da apresentação</span>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <div id="counter">Slide 1 de 10</div>
+    </div>
+    <div class="controls">
+      <button id="prev" disabled>← Anterior</button>
+      <button id="next">Próximo →</button>
+    </div>
+  </footer>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const counter = document.getElementById('counter');
+    const progress = document.getElementById('progress');
+    let current = 0;
+
+    function showSlide(index) {
+      current = Math.max(0, Math.min(index, slides.length - 1));
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+      prev.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+      counter.textContent = `Slide ${current + 1} de ${slides.length}`;
+      progress.style.width = `${((current + 1) / slides.length) * 100}%`;
+    }
+
+    prev.addEventListener('click', () => showSlide(current - 1));
+    next.addEventListener('click', () => showSlide(current + 1));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === ' ') showSlide(current + 1);
+      if (event.key === 'ArrowLeft') showSlide(current - 1);
+    });
+    showSlide(0);
+  </script>
+</body>
+</html>
